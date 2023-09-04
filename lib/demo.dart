@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'dart:async';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
@@ -12,8 +11,6 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text('This is normal text'),
-    );
+    return const Text('This is normal text');
   }
 }
