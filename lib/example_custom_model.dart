@@ -46,7 +46,13 @@ class _customModelState extends State<customModel> {
                       itemCount: photosList.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          title: Text(snapshot.data![index].title.toString()),
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                snapshot.data![index].url.toString()),
+                          ),
+                          subtitle:
+                              Text(snapshot.data![index].title.toString()),
+                          title: Text(snapshot.data![index].id.toString()),
                         );
                       });
                 }),
