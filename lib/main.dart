@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food/building_list_with_complex_json.dart';
+import 'package:food/complex_json_without_generate_model.dart';
 import 'package:food/example_custom_model.dart';
 import 'package:food/home_page.dart';
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const ComplexJson(),
+      home: ComplexJsonWithoutModel(),
     );
   }
 }
