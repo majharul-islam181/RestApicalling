@@ -40,12 +40,22 @@ class _HomePageState extends State<HomePage> {
                 future: getPostApi(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return Text("loaading");
+                    return const Text("loaading");
                   } else {
                     return ListView.builder(
                       itemCount: postList.length,
                       itemBuilder: (context, index) {
-                        return Text(postList[index].title.toString());
+                        return Card(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(postList[index].id.toString()),
+                              Text('Tittle: ' +
+                                  postList[index].title.toString()),
+                            ],
+                          ),
+                        );
                       },
                     );
                   }
