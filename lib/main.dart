@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/example_custom_model.dart';
 import 'package:food/home_page.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const customModel(),
     );
   }
 }
