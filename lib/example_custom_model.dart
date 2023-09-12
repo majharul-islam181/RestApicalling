@@ -42,19 +42,23 @@ class _customModelState extends State<customModel> {
             child: FutureBuilder(
                 future: getPhotos(),
                 builder: (context, AsyncSnapshot<List<Photos>> snapshot) {
-                  return ListView.builder(
-                      itemCount: photosList.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                snapshot.data![index].url.toString()),
-                          ),
-                          subtitle:
-                              Text(snapshot.data![index].title.toString()),
-                          title: Text(snapshot.data![index].id.toString()),
-                        );
-                      });
+                  if (!snapshot.hasData) {
+                    return CircularProgressIndicator();
+                  } else {
+                    return ListView.builder(
+                        itemCount: photosList.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  snapshot.data![index].url.toString()),
+                            ),
+                            subtitle:
+                                Text(snapshot.data![index].title.toString()),
+                            title: Text(snapshot.data![index].id.toString()),
+                          );
+                        });
+                  }
                 }),
           ),
         ],
