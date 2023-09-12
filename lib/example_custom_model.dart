@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -20,8 +22,14 @@ class _customModelState extends State<customModel> {
     var data = jsonDecode(response.body.toString());
 
     if (response.statusCode == 200) {
-      Map()
-    } else {}
+      for (Map i in data) {
+        Photos photos = Photos(id: i['id'], title: i['title'], url: i['url']);
+        photosList.add(photos);
+      }
+      return photosList;
+    } else {
+      return photosList;
+    }
   }
 
   @override
@@ -29,7 +37,21 @@ class _customModelState extends State<customModel> {
     return Scaffold(
       appBar: AppBar(title: const Text('Custom Model with APi')),
       body: Column(
-        children: [],
+        children: [
+          Expanded(
+            child: FutureBuilder(
+                future: getPhotos(),
+                builder: (context, AsyncSnapshot<List<Photos>> snapshot) {
+                  return ListView.builder(
+                      itemCount: photosList.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: Text(snapshot.data![index].title.toString()),
+                        );
+                      });
+                }),
+          ),
+        ],
       ),
     );
   }
