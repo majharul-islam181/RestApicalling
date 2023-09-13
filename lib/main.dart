@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food/complex_json_without_generate_model.dart';
 import 'package:food/example_custom_model.dart';
 import 'package:food/home_page.dart';
+import 'package:food/object_based_JSON/object_based.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ComplexJsonWithoutModel(),
+      home: ObjectBased(),
     );
   }
 }
