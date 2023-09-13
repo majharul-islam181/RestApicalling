@@ -2,6 +2,15 @@
 
 A new Flutter project.
 
+#The JSON i used in this project : 
+https://jsonplaceholder.typicode.com/
+
+#JSON viewer : 
+https://jsonviewer.stack.hu/
+
+#FAKE API : 
+https://webhook.site/
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
