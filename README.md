@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-#The JSON i used in this project : 
+#The JSON I used in this project : 
 https://jsonplaceholder.typicode.com/
 
 #JSON viewer : 
